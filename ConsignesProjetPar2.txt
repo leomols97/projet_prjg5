@@ -1,0 +1,9 @@
+Il faut faire un site sur lequel les étudiants vont pouvoir acheter des produits informatiques.
+Il faut pouvoir :
+- ajouter un étudiant
+- ajouter, modifier et supprimer un produit
+- un étudiant peut acheter plusieurs procduits
+
+- on va faire une sorte de panier
+- la gestion des stocks doiut se faire dès qu'une commande est validée
+
