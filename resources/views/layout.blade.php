@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>AchatInformatique</title>
+        <meta charset="UTF-8">
+        <title>Achat Informatique</title>
     </head>
     <body>
         <header>

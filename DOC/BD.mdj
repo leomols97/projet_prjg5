@@ -36,11 +36,11 @@
 										"$ref": "AAAAAAF0nGcPqHUsXR0="
 									},
 									"font": "Arial;13;1",
-									"left": 376,
+									"left": 408,
 									"top": 197,
 									"width": 169,
 									"height": 13,
-									"text": "Personne"
+									"text": "Admin"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -62,7 +62,7 @@
 												"$ref": "AAAAAAF0nGcuXHU4QLY="
 											},
 											"font": "Arial;13;0",
-											"left": 381,
+											"left": 413,
 											"top": 220,
 											"width": 159,
 											"height": 13
@@ -77,7 +77,7 @@
 												"$ref": "AAAAAAF0nJQRxHaIcWI="
 											},
 											"font": "Arial;13;0",
-											"left": 381,
+											"left": 413,
 											"top": 235,
 											"width": 159,
 											"height": 13
@@ -92,7 +92,7 @@
 												"$ref": "AAAAAAF0nGdcmnU/nXw="
 											},
 											"font": "Arial;13;0",
-											"left": 381,
+											"left": 413,
 											"top": 250,
 											"width": 159,
 											"height": 13
@@ -107,21 +107,21 @@
 												"$ref": "AAAAAAF0nGeAG3VG3ps="
 											},
 											"font": "Arial;13;0",
-											"left": 381,
+											"left": 413,
 											"top": 265,
 											"width": 159,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 376,
+									"left": 408,
 									"top": 215,
 									"width": 169,
 									"height": 68
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 376,
+							"left": 408,
 							"top": 192,
 							"width": 169,
 							"height": 121,
@@ -643,7 +643,7 @@
 									"top": 165,
 									"width": 169,
 									"height": 13,
-									"text": "Personne"
+									"text": "Admin"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -788,7 +788,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF0nGWquXTjnik="
 					},
-					"name": "Personne",
+					"name": "Admin",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
