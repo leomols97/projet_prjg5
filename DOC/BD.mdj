@@ -40,7 +40,7 @@
 									"top": 197,
 									"width": 169,
 									"height": 13,
-									"text": "Admins"
+									"text": "Personne"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -266,7 +266,7 @@
 									"top": 389,
 									"width": 113,
 									"height": 13,
-									"text": "Panniers"
+									"text": "Paniers"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -643,7 +643,7 @@
 									"top": 165,
 									"width": 169,
 									"height": 13,
-									"text": "Admins"
+									"text": "Personne"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -788,7 +788,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF0nGWquXTjnik="
 					},
-					"name": "Admins",
+					"name": "Personne",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -910,7 +910,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF0nGWquXTjnik="
 					},
-					"name": "Panniers",
+					"name": "Paniers",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
