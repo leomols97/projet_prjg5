@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/administrateur', 'AdminCtrl@adminMainPage');
-Route::post('/administrateur/createStudent', 'StudentCtrl@addStudent');
-Route::post('/administrateur/createProduct', 'ProductCtrl@addProduct');
+Route::post('/administrateur/createStudent', 'MyUserCtrl@createUser');
+Route::post('/administrateur/createProduct', 'ProductCtrl@createProduct');

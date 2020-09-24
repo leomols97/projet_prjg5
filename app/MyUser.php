@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class MyUser extends Model
 {
     public $timestamps = false;
+    protected $table = 'myusers';
 }

@@ -1,15 +1,9 @@
-CREATE TABLE Admins (
-	adm_id VARCHAR(32) PRIMARY KEY NOT NULL,
+CREATE TABLE MyUsers (
+	myuser_id VARCHAR(32) PRIMARY KEY NOT NULL,
     pass_word VARCHAR(32) NOT NULL,
     last_name VARCHAR(64) NOT NULL,
-    first_name VARCHAR(64) NOT NULL
-);
-
-CREATE TABLE Students (
-	stu_id VARCHAR(32) PRIMARY KEY NOT NULL,
-    pass_word VARCHAR(32) NOT NULL,
-    last_name VARCHAR(64) NOT NULL,
-    first_name VARCHAR(64) NOT NULL
+    first_name VARCHAR(64) NOT NULL,
+	is_admin BOOLEAN NOT NULL
 );
 
 CREATE TABLE Products (
@@ -24,7 +18,7 @@ CREATE TABLE Panniers (
     date_bought DATE NOT NULL,
     bought BOOLEAN NOT NULL,
     owner VARCHAR(32) NOT NULL,
-    FOREIGN KEY(owner) REFERENCES Students(stu_id)
+    FOREIGN KEY(owner) REFERENCES MyUsers(myuser_id)
 );
 
 CREATE TABLE Panier_Product (
