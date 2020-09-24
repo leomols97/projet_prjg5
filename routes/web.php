@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\AdminCtrl;
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/administrateur', 'AdminCtrl@adminMainPage');
