@@ -34,7 +34,8 @@ function AfficherMasquerNewProduct()
 <!-- Ca c'est le div en question qui possède l'id indiqué dans
 la fonction. -->
 <div id="divNewStudentACacher" style="display:none">
-<form name="createStudent">
+<form name="createStudent" action="administrateur/createStudent" method="post">
+        {{ csrf_field() }}
         <label>Votre nom</label> : <input type="text" name="last_name"><br>
         <label>Votre prénom</label> : <input type="text" name="first_name"><br>
         <label>Votre matricule</label> : <input type="text" name="matricule"><br>
@@ -45,7 +46,8 @@ la fonction. -->
 
 <input type="button" value="Enregistrer un nouveau produit" onClick="AfficherMasquerNewProduct()" />
 <div id="divNewProductACacher" style="display:none">
-<form name="createProduct">
+<form name="createProduct" action="administrateur/createProduct" method="post">
+        {{ csrf_field() }}
         <label>Description</label> : <input type="text" name="description"><br>
         <label>Prix</label> : <input type="text" name="price"><br>
         <label>Quantité en stock</label> : <input type="text" name="stock_qt"><br>
@@ -53,5 +55,4 @@ la fonction. -->
         <button type="submit">Enregistrer</button>
 </form>
 </div>
-
 @stop

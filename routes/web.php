@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/administrateur', 'AdminCtrl@adminMainPage');
+Route::post('/administrateur/createStudent', 'AdminCtrl@addStudent');
