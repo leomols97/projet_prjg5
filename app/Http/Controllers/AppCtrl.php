@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -13,9 +14,9 @@ class AppCtrl extends Controller
 
     public function connexion(Request $request)
     {
-        $user_id =  htmlentities($_POST["myuser_id"]);
-        $pass_word =  htmlentities($_POST["pass_word"]);
         try {
+            $user_id = htmlentities($_POST["myuser_id");
+            $pass_word = htmlentities($_POST["pass_word");
             $user = \App\MyUser::findOrFail($user_id);
             if ($user->pass_word != $pass_word)
                 return "<script> alert('Mot de Passe Invalide!') </script>";
@@ -23,11 +24,17 @@ class AppCtrl extends Controller
                 $request->session()->put('is_admin', '1');
                 $request->session()->put('is_connected', '1');
                 return redirect('/administrateur');
-            } else
-            $request->session()->put('is_connected', '1');
+            } else {
+                $request->session()->put('is_connected', '1');
                 return redirect('/storePage');
+            }
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $ex) {
-            return view('errorPage', ['errorMsg' => 'Utilisateur Inexistent! Vueillez contacter un administrateur!']);
+            return view('errorPage',
+                [
+                    'errorMsg' => 'Utilisateur Inexistent! Vueillez contacter un administrateur!',
+                    'where' => '/'
+                ]);
         }
     }
+
 }

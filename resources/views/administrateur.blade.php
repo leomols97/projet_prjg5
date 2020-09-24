@@ -11,12 +11,13 @@
 <!-- Ca c'est le div en question qui possède l'id indiqué dans
 la fonction. -->
 <div id="divNewStudent" style="display:none">
+    <h3>-Creation Utilisateur:</h3>
     <form action="administrateur/createUser" method="post">
             {{ csrf_field() }}
-            <label>Votre nom</label> : <input type="text" name="last_name"><br>
-            <label>Votre prénom</label> : <input type="text" name="first_name"><br>
-            <label>Votre matricule</label> : <input type="text" name="matricule"><br>
-            <label>Votre mot de passe</label> : <input type="password" name="pass_word"><br>
+            <label>Votre nom</label> : <input type="text" name="last_name" required><br>
+            <label>Votre prénom</label> : <input type="text" name="first_name" required><br>
+            <label>Votre matricule</label> : <input type="text" name="matricule" required><br>
+            <label>Votre mot de passe</label> : <input type="password" name="pass_word" required><br>
             <label>Est administrateur:</label> : <input type="checkbox" name="is_admin" value="0"><br>
             <button type="submit">Enregistrer</button>
     </form>
@@ -25,25 +26,29 @@ la fonction. -->
 
 <button onClick="AfficherMasquerDBButton('divNewProduct')">Enregistrer Nouveau Produit</button>
 <div id="divNewProduct" style="display:none">
-<form action="administrateur/createProduct" method="post">
-        {{ csrf_field() }}
-        <label>Description</label> : <input type="text" name="description"><br>
-        <label>Prix</label> : <input type="text" name="price"><br>
-        <label>Quantité en stock</label> : <input type="text" name="stock_qt"><br>
-        <label>Nom de l'image du produit</label> : <input type="text" name="path"><br>
-        <button type="submit">Enregistrer</button>
-</form>
+    <h3>-Creation Produit:</h3>
+    <form action="administrateur/createProduct" method="post">
+            {{ csrf_field() }}
+            <label>ID du Produit</label> : <input type="number" name="prod_id" required><br>
+            <label>Description</label> : <input type="text" name="description" required><br>
+            <label>Prix</label> : <input type="number" name="price" required><br>
+            <label>Quantité en stock</label> : <input type="number" name="stock_qt" required><br>
+            <label>Image du produit</label> : <input type="file" name="image" required><br>
+            <button type="submit">Enregistrer</button>
+    </form>
 </div>
 <br>
 
 <button onClick="AfficherMasquerDBButton('divModifyProduct')">Modifier Produit</button>
 <div id="divModifyProduct" style="display:none">
+    <h3>-Mise a jour Produit:</h3>
     <form action="administrateur/updateProduct" method="post">
             {{ csrf_field() }}
-            <label>Description</label> : <input type="text" name="description"><br>
-            <label>Prix</label> : <input type="text" name="price"><br>
-            <label>Quantité en stock</label> : <input type="text" name="stock_qt"><br>
-            <label>Nom de l'image du produit</label> : <input type="password" name="path"><br>
+            <label>ID du Produit</label> : <input type="number" name="prod_id" required><br>
+            <label>Description</label> : <input type="text" name="description" required><br>
+            <label>Prix</label> : <input type="number" name="price" required><br>
+            <label>Quantité en stock</label> : <input type="number" name="stock_qt" required><br>
+            <label>Image du produit</label> : <input type="file" name="image" required><br>
             <button type="submit">Enregistrer</button>
     </form>
 </div>
@@ -51,9 +56,10 @@ la fonction. -->
 
 <button onClick="AfficherMasquerDBButton('divDeleteProduct')">Supprimer Produit</button>
 <div id="divDeleteProduct" style="display:none">
+    <h3>-Supression Produit:</h3>
     <form action="administrateur/deleteProduct" method="post">
             {{ csrf_field() }}
-            <label>ID du produit à supprimer</label> : <input type="text" name="prod_id"><br>
+            <label>ID du produit à supprimer</label> : <input type="number" name="prod_id" required><br>
             <button type="submit">Enregistrer</button>
     </form>
 </div>

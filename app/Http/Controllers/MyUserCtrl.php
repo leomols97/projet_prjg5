@@ -16,6 +16,7 @@ class MyUserCtrl extends Controller {
         $myUser->is_admin =  $this->checkAdmin();
         $myUser->save();
         return redirect('/administrateur');
+
     }
 
     private function checkAdmin() {
@@ -26,6 +27,5 @@ class MyUserCtrl extends Controller {
             return "0";
         }
     }
-
 
 }

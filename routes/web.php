@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'AppCtrl@displayHomePage');
 Route::post('/connect', 'AppCtrl@connexion');
 Route::get('/administrateur', 'AdminCtrl@adminMainPage');
+Route::get('/storePage', 'AppCtrl@storePage');
 Route::post('/administrateur/createUser', 'MyUserCtrl@createUser');
 Route::post('/administrateur/createProduct', 'ProductCtrl@createProduct');
+Route::post('/administrateur/updateProduct', 'ProductCtrl@updateProduct');
+Route::post('/administrateur/deleteProduct', 'ProductCtrl@deleteProduct');

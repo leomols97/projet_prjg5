@@ -11,6 +11,10 @@ class AdminCtrl extends Controller {
         if ($request->session()->get('is_admin') == '1')
             return view('administrateur');
         else
-            return view('errorPage', ['errorMsg' => "Tu n'as pas les permissions pour acceder cette page."]);
+            return view('errorPage',
+                [
+                    'errorMsg' => "Tu n'as pas les permissions pour acceder cette page.",
+                    'where' => "/"
+                ]);
     }
 }

@@ -6,4 +6,7 @@
 
 @section('content')
 <h2>{{ $errorMsg }}</h2>
+<form action={{ $where }} method="get">
+<button type="submit">Retourner</button>
+</form>
 @stop
