@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductCtrl;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/administrateur', 'AdminCtrl@adminMainPage');
-Route::post('/administrateur/createStudent', 'AdminCtrl@addStudent');
+Route::post('/administrateur/createStudent', 'StudentCtrl@addStudent');
+Route::post('/administrateur/createProduct', 'ProductCtrl@addProduct');
