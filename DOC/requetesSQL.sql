@@ -33,3 +33,6 @@ CREATE TABLE Panier_Product (
     FOREIGN KEY(pan_id) REFERENCES Panniers(pan_id),
     FOREIGN KEY(prod_id) REFERENCES Products(prod_id)
 );
+
+ALTER TABLE products
+ADD COLUMN path varchar(256);
