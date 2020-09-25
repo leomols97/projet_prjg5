@@ -2,9 +2,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductCtrl extends Controller {
+
 
     public function createProduct() {
             $product = new \App\Product;
@@ -12,12 +14,7 @@ class ProductCtrl extends Controller {
             $product->description = htmlentities($_POST["description"]);
             $product->price = htmlentities($_POST["price"]);
             $product->stock_qt = htmlentities($_POST["stock_qt"]);
-            request()->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            $imageName = time().'.'.request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('images'), $imageName);
-            $product->path = $imageName;
+            $product->path = $this->retrieveImg();
             $product->save();
             return redirect('/administrateur');
     }
@@ -29,16 +26,7 @@ class ProductCtrl extends Controller {
             $product->description = htmlentities($_POST["description"]);
             $product->price = htmlentities($_POST["price"]);
             $product->stock_qt = htmlentities($_POST["stock_qt"]);
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            if ($request->file('image')) {
-                echo 'OKKKKKKKKKK';
-                $imagePath = $request->file('image');
-                $imageName = $imagePath->getClientOriginalName();
-                $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
-            }
-            $product->path = $path . '/' . $imageName;
+            $product->path = $this->retrieveImg();
             $product->save();
             //return redirect('/administrateur');
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $ex) {
@@ -47,6 +35,23 @@ class ProductCtrl extends Controller {
                     'errorMsg' => 'Produit Inexistent! Vueillez contacter un administrateur1!',
                     'where' => '/administrateur'
                 ]);
+        }
+    }
+
+    private function retrieveImg() {
+        if(isset($_POST['submit'])){
+            $name       = $_FILES['image']['name'];
+            $temp_name  = $_FILES['image']['tmp_name'];
+            if(isset($name) and !empty($name)){
+                $location = 'uploads/';
+                if(move_uploaded_file($temp_name, $location.$name)){
+                    return $location.$name;
+                }
+            } else {
+                echo 'You should select a file to upload !!';
+            }
+        } else {
+            throw new Exception('Pas bien');
         }
     }
 

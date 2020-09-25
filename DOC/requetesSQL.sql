@@ -30,3 +30,6 @@ CREATE TABLE Panier_Product (
 
 ALTER TABLE products
 ADD COLUMN path varchar(256);
+
+ALTER TABLE panier_product
+ADD COLUMN qt INT NOT NULL;
