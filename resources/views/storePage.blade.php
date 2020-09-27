@@ -5,28 +5,30 @@
 @endsection
 
 @section('content')
-    @foreach ($products as $product)
-        <div class="productZone">
-            <p class="prodTitle">Reference: {{ $product->prod_id }}</p>
-            <p class="prodDescription">Description: {{ $product->description }}</p>
-            <p class="prodPrice">Price: {{ $product->price }}</p>
-            <p class="prodStock">Stock: {{ $product->stock_qt }}</p>
-            <img src="{{ $product->path }}" width="50px" height="50px">
-            <input id="qt{{ $loop->index }}" type="number" name="buy_qt" id="buy_qt">
-            <button id="bt{{ $loop->index }}" onClick='addProd({{ $loop->index }})'>Ajouter<button>
-        </div>
-    @endforeach
-    <div id=pannier>
-        <p>Pannier:</p>
-        <table id="pannier_list">
-            <tr>
+    <div class="productsZone">
+        @foreach ($products as $product)
+            <div class="productZone" class="input-group mb-3">
+                <p class="prodTitle">Reference: {{ $product->prod_id }}</p>
+                <p class="prodDescription">Description: {{ $product->description }}</p>
+                <p class="prodPrice">Price: {{ $product->price }}</p>
+                <p class="prodStock">Stock: {{ $product->stock_qt }}</p>
+                <img src="{{ $product->path }}" class="img-thumbnail"><br>
+                <input id="qt{{ $loop->index }}" type="number" name="buy_qt" id="buy_qt">
+                <button id="bt{{ $loop->index }}" onClick='addProd({{ $loop->index }})' class="btn btn-secondary">Ajouter</button>
+            </div>
+        @endforeach
+    </div>
+    <div id="pannier" >
+        <h2>Pannier:</h2>
+        <table id="pannier_list" class="table-striped">
+            <thead>
                 <th> Quantite </th>
                 <th> Product ID </th>
                 <th> Description </th>
                 <th> Prix </th>
-            </tr>
+            </thead>
         </table>
-        <button onClick="sendPan()">Envoyer</button>
+        <button onClick="sendPan()" class="btn btn-primary">Envoyer</button>
     </div>
 @endsection
 
@@ -51,7 +53,6 @@
     }
 
     function sendPan() {
-        alert(localStorage.getItem("myuser_id"));
         $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -62,7 +63,7 @@
                 type: "POST",
                 data: { products: JSON.stringify(panProducts), user : localStorage.getItem("myuser_id") }
         }).done(function() {
-            ;;
+            location.reload();
         });
     }
 </script>

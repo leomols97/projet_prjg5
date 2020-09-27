@@ -10,9 +10,9 @@ la fonction. -->
 <div id="login">
 <form name="login" action="connect" method="post">
         {{ csrf_field() }}
-        <label>Votre matricule</label> : <input id="user_id" type="text" name="myuser_id"><br>
-        <label>Votre mot de passe</label> : <input type="password" name="pass_word"><br>
-        <button onMouseOver="saveUser()" type="submit">Se connecter</button>
+        <label>Votre matricule</label> : <input id="user_id" type="text" name="myuser_id" class="form-control" ><br>
+        <label>Votre mot de passe</label> : <input type="password" name="pass_word" class="form-control"><br>
+        <button onMouseOver="saveUser()" type="submit" class="btn btn-primary">Se connecter</button>
 </form>
 </div>
 @stop

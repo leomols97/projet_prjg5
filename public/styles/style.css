@@ -1,0 +1,46 @@
+header {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+footer {
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    margin: 5px;
+}
+
+input {
+    max-width: 50em;
+}
+
+.productsZone {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productZone {
+    background-color: lightgreen;
+    margin: 15px;
+}
+
+#pannier {
+    background-color: lightyellow;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px 25px 10px 25px;
+}
+
+div, form {
+    padding: 10px;
+}
