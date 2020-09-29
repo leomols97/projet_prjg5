@@ -15,8 +15,8 @@ class AppCtrl extends Controller
     public function connexion(Request $request)
     {
         try {
-            $user_id = htmlentities($_POST["myuser_id");
-            $pass_word = htmlentities($_POST["pass_word");
+            $user_id = htmlentities($_POST["myuser_id"]);
+            $pass_word = htmlentities($_POST["pass_word"]);
             $user = \App\MyUser::findOrFail($user_id);
             if ($user->pass_word != $pass_word)
                 return "<script> alert('Mot de Passe Invalide!') </script>";

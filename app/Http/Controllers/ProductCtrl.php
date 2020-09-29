@@ -2,9 +2,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductCtrl extends Controller {
+
+    private $target_dir = "images/";
 
     public function createProduct() {
             $product = new \App\Product;
@@ -12,12 +15,7 @@ class ProductCtrl extends Controller {
             $product->description = htmlentities($_POST["description"]);
             $product->price = htmlentities($_POST["price"]);
             $product->stock_qt = htmlentities($_POST["stock_qt"]);
-            request()->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            $imageName = time().'.'.request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('images'), $imageName);
-            $product->path = $imageName;
+            $product->path = $this->retrieveImg();
             $product->save();
             return redirect('/administrateur');
     }
@@ -29,16 +27,7 @@ class ProductCtrl extends Controller {
             $product->description = htmlentities($_POST["description"]);
             $product->price = htmlentities($_POST["price"]);
             $product->stock_qt = htmlentities($_POST["stock_qt"]);
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            if ($request->file('image')) {
-                echo 'OKKKKKKKKKK';
-                $imagePath = $request->file('image');
-                $imageName = $imagePath->getClientOriginalName();
-                $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
-            }
-            $product->path = $path . '/' . $imageName;
+            $product->path = $this->retrieveImg();
             $product->save();
             //return redirect('/administrateur');
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $ex) {
@@ -48,6 +37,19 @@ class ProductCtrl extends Controller {
                     'where' => '/administrateur'
                 ]);
         }
+    }
+
+    private function retrieveImg() {
+        $target_file = $this->target_dir . basename($_FILES["image"]["name"]);
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if($check !== false) {
+            throw new Exception("Erreur dans le chargement de l'image");
+        }
+        if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            throw new Exception("Il a été impossible de faire upload!");
+        }
+        return $target_file;
+
     }
 
     public function deleteProduct() {
