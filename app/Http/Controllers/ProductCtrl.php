@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class ProductCtrl extends Controller {
 
+	private $target_dir = "images/";
+	
     public function createProduct() {
             $product = new \App\Product;
             $product->prod_id = htmlentities($_POST["prod_id"]);
@@ -38,15 +40,21 @@ class ProductCtrl extends Controller {
     }
 
     private function retrieveImg() {
-        $target_file = $this->target_dir . basename($_FILES["image"]["name"]);
-        $check = getimagesize($_FILES["image"]["tmp_name"]);
-        if($check !== false) {
-            throw new Exception("Erreur dans le chargement de l'image");
+		if(isset($_POST['submit'])){
+            $name       = $_FILES['image']['name'];
+            $temp_name  = $_FILES['image']['tmp_name'];
+            if(isset($name) and !empty($name)){
+                $location = 'uploads/';
+                if(move_uploaded_file($temp_name, $location.$name)){
+                    return $location.$name;
+                }
+            } else {
+                echo 'You should select a file to upload !!';
+            }
+        } else {
+            throw new Exception('Pas bien');
         }
-        if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            throw new Exception("Il a été impossible de faire upload!");
-        }
-        return $target_file;
+
     }
 
     public function deleteProduct() {
