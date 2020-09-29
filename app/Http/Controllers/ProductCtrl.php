@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductCtrl extends Controller {
 
-    private $target_dir = "images/";
-
     public function createProduct() {
             $product = new \App\Product;
             $product->prod_id = htmlentities($_POST["prod_id"]);
@@ -49,7 +47,6 @@ class ProductCtrl extends Controller {
             throw new Exception("Il a été impossible de faire upload!");
         }
         return $target_file;
-
     }
 
     public function deleteProduct() {

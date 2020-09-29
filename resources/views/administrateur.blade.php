@@ -7,63 +7,61 @@
 @section('content')
 
 <!-- La c'est le bouton qui va afficher le div en cliquant dessus. -->
-<button onClick="AfficherMasquerDBButton('divNewStudent')">Enregistrer nouveau utilisateur</button>
+<button onClick="AfficherMasquerDBButton('divNewStudent')" class="btn btn-info">Enregistrer nouveau utilisateur</button>
 <!-- Ca c'est le div en question qui possède l'id indiqué dans
 la fonction. -->
 <div id="divNewStudent" style="display:none">
     <h3>-Creation Utilisateur:</h3>
     <form action="administrateur/createUser" method="post">
             {{ csrf_field() }}
-            <label>Votre nom</label> : <input type="text" name="last_name" required><br>
-            <label>Votre prénom</label> : <input type="text" name="first_name" required><br>
-            <label>Votre matricule</label> : <input type="text" name="matricule" required><br>
-            <label>Votre mot de passe</label> : <input type="password" name="pass_word" required><br>
+            <label>Votre nom</label> : <input type="text" name="last_name" class="form-control" required><br>
+            <label>Votre prénom</label> : <input type="text" name="first_name" class="form-control" required><br>
+            <label>Votre matricule</label> : <input type="text" name="matricule" class="form-control" required><br>
+            <label>Votre mot de passe</label> : <input type="password" name="pass_word" class="form-control" required><br>
             <label>Est administrateur:</label> : <input type="checkbox" name="is_admin" value="0"><br>
-            <button type="submit">Enregistrer</button>
-    </form>
+            <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
 
-<button onClick="AfficherMasquerDBButton('divNewProduct')">Enregistrer Nouveau Produit</button>
+<button onClick="AfficherMasquerDBButton('divNewProduct')" class="btn btn-info">Enregistrer Nouveau Produit</button>
 <div id="divNewProduct" style="display:none">
     <h3>-Creation Produit:</h3>
-    <form action="administrateur/createProduct" method="post">
+    <form action="administrateur/createProduct" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <label>ID du Produit</label> : <input type="number" name="prod_id" required><br>
-            <label>Description</label> : <input type="text" name="description" required><br>
-            <label>Prix</label> : <input type="number" name="price" required><br>
-            <label>Quantité en stock</label> : <input type="number" name="stock_qt" required><br>
-            <label>Image du produit</label> : <input type="file" name="image" required><br>
-            <button type="submit">Enregistrer</button>
-    </form>
+            <label>ID du Produit</label> : <input type="number" name="prod_id" class="form-control" required><br>
+            <label>Description</label> : <input type="text" name="description" class="form-control" required><br>
+            <label>Prix</label> : <input type="number" name="price" class="form-control" required><br>
+            <label>Quantité en stock</label> : <input type="number" name="stock_qt" class="form-control" required><br>
+            <label>Image du produit</label> : <input type="file" name="image" class="form-control-file" required><br>
+            <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
 
-<button onClick="AfficherMasquerDBButton('divModifyProduct')">Modifier Produit</button>
+<button onClick="AfficherMasquerDBButton('divModifyProduct')" class="btn btn-info">Modifier Produit</button>
 <div id="divModifyProduct" style="display:none">
     <h3>-Mise a jour Produit:</h3>
-    <form action="administrateur/updateProduct" method="post">
+    <form action="administrateur/updateProduct" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <label>ID du Produit</label> : <input type="number" name="prod_id" required><br>
-            <label>Description</label> : <input type="text" name="description" required><br>
-            <label>Prix</label> : <input type="number" name="price" required><br>
-            <label>Quantité en stock</label> : <input type="number" name="stock_qt" required><br>
-            <label>Image du produit</label> : <input type="file" name="image" required><br>
-            <button type="submit">Enregistrer</button>
-    </form>
+            <label>ID du Produit</label> : <input type="number" name="prod_id" class="form-control"><br>
+            <label>Description</label> : <input type="text" name="description" class="form-control"><br>
+            <label>Prix</label> : <input type="number" name="price" class="form-control"><br>
+            <label>Quantité en stock</label> : <input type="number" name="stock_qt" class="form-control"><br>
+            <label>Image du produit</label> : <input type="file" name="image" class="form-control-file"><br>
+            <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
 
-<button onClick="AfficherMasquerDBButton('divDeleteProduct')">Supprimer Produit</button>
+<button onClick="AfficherMasquerDBButton('divDeleteProduct')" class="btn btn-info">Supprimer Produit</button>
 <div id="divDeleteProduct" style="display:none">
     <h3>-Supression Produit:</h3>
     <form action="administrateur/deleteProduct" method="post">
             {{ csrf_field() }}
-            <label>ID du produit à supprimer</label> : <input type="number" name="prod_id" required><br>
-            <button type="submit">Enregistrer</button>
-    </form>
+            <label>ID du produit à supprimer</label> : <input type="number" name="prod_id" class="form-control" required><br>
+            <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
+<form action="storePage" method="get">
+    <input type="submit" value="Page d'Achats" name="submit" class="btn btn-light">    </form>
 @endsection
 
 <script type="text/javascript">
