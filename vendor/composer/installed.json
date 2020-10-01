@@ -1181,6 +1181,70 @@
         ]
     },
     {
+        "name": "laravel/browser-kit-testing",
+        "version": "v6.1.0",
+        "version_normalized": "6.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/browser-kit-testing.git",
+            "reference": "7c7ddf11efc0fe9656f37554f06f69feef71b8a0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/browser-kit-testing/zipball/7c7ddf11efc0fe9656f37554f06f69feef71b8a0",
+            "reference": "7c7ddf11efc0fe9656f37554f06f69feef71b8a0",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-json": "*",
+            "illuminate/contracts": "^7.0|^8.0",
+            "illuminate/database": "^7.0|^8.0",
+            "illuminate/http": "^7.0|^8.0",
+            "illuminate/support": "^7.0|^8.0",
+            "illuminate/testing": "^7.0|^8.0",
+            "mockery/mockery": "^1.0",
+            "php": "^7.2",
+            "phpunit/phpunit": "^8.5|^9.0",
+            "symfony/console": "^5.0",
+            "symfony/css-selector": "^5.0",
+            "symfony/dom-crawler": "^5.0",
+            "symfony/http-foundation": "^5.0",
+            "symfony/http-kernel": "^5.0"
+        },
+        "require-dev": {
+            "laravel/framework": "^7.0|^8.0"
+        },
+        "time": "2020-08-25T16:58:12+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\BrowserKitTesting\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "Provides backwards compatibility for BrowserKit testing in the latest Laravel release.",
+        "keywords": [
+            "laravel",
+            "testing"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v7.28.3",
         "version_normalized": "7.28.3.0",
@@ -4477,6 +4541,84 @@
             }
         ],
         "description": "A generic function and convention to trigger deprecation notices",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/dom-crawler",
+        "version": "v5.1.6",
+        "version_normalized": "5.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/dom-crawler.git",
+            "reference": "6d6885e167aad0af4128b392f22d8f2a33dd88ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/6d6885e167aad0af4128b392f22d8f2a33dd88ec",
+            "reference": "6d6885e167aad0af4128b392f22d8f2a33dd88ec",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/polyfill-ctype": "~1.8",
+            "symfony/polyfill-mbstring": "~1.0",
+            "symfony/polyfill-php80": "^1.15"
+        },
+        "conflict": {
+            "masterminds/html5": "<2.6"
+        },
+        "require-dev": {
+            "masterminds/html5": "^2.6",
+            "symfony/css-selector": "^4.4|^5.0"
+        },
+        "suggest": {
+            "symfony/css-selector": ""
+        },
+        "time": "2020-09-02T16:23:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\DomCrawler\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony DomCrawler Component",
         "homepage": "https://symfony.com",
         "funding": [
             {

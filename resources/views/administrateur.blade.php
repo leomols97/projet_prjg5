@@ -18,6 +18,7 @@ la fonction. -->
             <label>Votre prénom</label> : <input type="text" name="first_name" class="form-control" required><br>
             <label>Votre matricule</label> : <input type="text" name="matricule" class="form-control" required><br>
             <label>Votre mot de passe</label> : <input type="password" name="pass_word" class="form-control" required><br>
+            <label>Votre groupe</label> : <input type="text" name="groupe_descp" class="form-control" required><br>
             <label>Est administrateur:</label> : <input type="checkbox" name="is_admin" value="0"><br>
             <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
@@ -32,6 +33,7 @@ la fonction. -->
             <label>Description</label> : <input type="text" name="description" class="form-control" required><br>
             <label>Prix</label> : <input type="number" name="price" class="form-control" required><br>
             <label>Quantité en stock</label> : <input type="number" name="stock_qt" class="form-control" required><br>
+            <label>Categorie</label> : <input type="text" name="cat_id" class="form-control" required><br>
             <label>Image du produit</label> : <input type="file" name="image" class="form-control-file" required><br>
             <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
@@ -46,6 +48,7 @@ la fonction. -->
             <label>Description</label> : <input type="text" name="description" class="form-control"><br>
             <label>Prix</label> : <input type="number" name="price" class="form-control"><br>
             <label>Quantité en stock</label> : <input type="number" name="stock_qt" class="form-control"><br>
+            <label>Categorie</label> : <input type="text" name="cat_id" class="form-control" required><br>
             <label>Image du produit</label> : <input type="file" name="image" class="form-control-file"><br>
             <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>

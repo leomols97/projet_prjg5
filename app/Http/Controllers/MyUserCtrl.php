@@ -8,11 +8,13 @@ class MyUserCtrl extends Controller {
 
     public function createUser() {
         //TODO Empty cases, change return.
+        $groupe = \App\Groupe::firstOrCreate(['description' => htmlentities($_POST["groupe_descp"])]);
         $myUser = new \App\MyUser;
         $myUser->myuser_id =  htmlentities($_POST["matricule"]);
         $myUser->pass_word =  htmlentities($_POST["pass_word"]);
         $myUser->first_name = htmlentities($_POST["first_name"]);
         $myUser->last_name = htmlentities($_POST["last_name"]);
+        $myUser->groupe = $groupe->groupe_id;
         $myUser->is_admin =  $this->checkAdmin();
         $myUser->save();
         return redirect('/administrateur');

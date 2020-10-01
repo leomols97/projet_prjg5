@@ -38,9 +38,16 @@ class AppCtrl extends Controller
         }
     }
 
-    public function storePage() {
-        $products = \App\Product::all();
-        return view("storePage", ["products" => $products]);
+    public function storePage(Request $request) {
+        if ($request->session()->get('is_connected') == '1') {
+            $products = \App\Product::all();
+            return view("storePage", ["products" => $products]);
+        } else
+            return view('errorPage',
+                [
+                    'errorMsg' => "Tu n'es pas connecté pour acceder cette page.",
+                    'where' => "/"
+                ]);
     }
 
     public function resolveBuy() {
