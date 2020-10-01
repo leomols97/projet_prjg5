@@ -18,7 +18,13 @@ class MyUserCtrl extends Controller {
         $myUser->is_admin =  $this->checkAdmin();
         $myUser->save();
         return redirect('/administrateur');
+    }
 
+    public function usersList() {
+        return view('userList',
+        [
+            'users' => \App\MyUser::join('groupes', 'myusers.groupe', '=', 'groupes.groupe_id')->get()
+        ]);
     }
 
     private function checkAdmin() {

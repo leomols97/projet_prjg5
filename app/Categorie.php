@@ -10,4 +10,6 @@ class Categorie extends Model
 
     protected $table = 'categories';
     protected $primaryKey = 'cat_id';
+    protected $fillable = ['description'];
+
 }

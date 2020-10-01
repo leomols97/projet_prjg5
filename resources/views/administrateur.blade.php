@@ -63,6 +63,8 @@ la fonction. -->
             <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
+<form action="usersList" method="get">
+    <input type="submit" value="Liste d'utilisateurs" name="submit" class="btn btn-light">    </form>
 <form action="storePage" method="get">
     <input type="submit" value="Page d'Achats" name="submit" class="btn btn-light">    </form>
 @endsection
