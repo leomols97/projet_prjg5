@@ -40,7 +40,8 @@ class AppCtrl extends Controller
 
     public function storePage(Request $request) {
         if ($request->session()->get('is_connected') == '1') {
-            $products = \App\Product::all();
+            $products = \App\Product::join('categories', 'products.categorie', '=', 'categories.cat_id')
+                ->addSelect('prod_id', 'products.description', 'price', 'stock_qt', 'path', 'categories.description as prod_cat')->get();
             return view("storePage", ["products" => $products]);
         } else
             return view('errorPage',

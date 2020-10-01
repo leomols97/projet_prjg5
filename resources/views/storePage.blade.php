@@ -12,6 +12,7 @@
                 <p class="prodDescription">Description: {{ $product->description }}</p>
                 <p class="prodPrice">Price: {{ $product->price }}</p>
                 <p class="prodStock">Stock: {{ $product->stock_qt }}</p>
+                <p class="prodCat">Categorie: {{ $product->prod_cat }}</p>
                 <img src="{{ $product->path }}" class="img-thumbnail"><br>
                 <input id="qt{{ $loop->index }}" type="number" name="buy_qt" id="buy_qt">
                 <button id="bt{{ $loop->index }}" onClick='addProd({{ $loop->index }})' class="btn btn-secondary">Ajouter</button>

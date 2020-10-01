@@ -11,7 +11,7 @@ class ProductCtrl extends Controller {
 	private $target_dir = "images/";
 
     public function createProduct() {
-            $categorie = \App\Categorie::findOrCreate(['description' => htmlentities($_POST["categorie"])]);
+            $categorie = \App\Categorie::firstOrCreate(['description' => htmlentities($_POST["categorie"])]);
             $product = new \App\Product;
             $product->prod_id = htmlentities($_POST["prod_id"]);
             $product->description = htmlentities($_POST["description"]);
@@ -25,7 +25,7 @@ class ProductCtrl extends Controller {
 
     public function updateProduct(Request $request) {
         try {
-            $categorie = \App\Categorie::findOrCreate(['description' => htmlentities($_POST["categorie"])]);
+            $categorie = \App\Categorie::firstOrCreate(['description' => htmlentities($_POST["categorie"])]);
             $prodid = htmlentities($_POST["prod_id"]);
             $product = \App\Product::findOrFail($prodid);
             $product->description = htmlentities($_POST["description"]);
