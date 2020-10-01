@@ -33,8 +33,8 @@ la fonction. -->
             <label>Description</label> : <input type="text" name="description" class="form-control" required><br>
             <label>Prix</label> : <input type="number" name="price" class="form-control" required><br>
             <label>Quantité en stock</label> : <input type="number" name="stock_qt" class="form-control" required><br>
-            <label>Categorie</label> : <input type="text" name="cat_id" class="form-control" required><br>
             <label>Image du produit</label> : <input type="file" name="image" class="form-control-file" required><br>
+            <label>Catégorie du produit</label> : <input type="text" name="categorie" class="form-control-file" required><br>
             <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
@@ -48,8 +48,8 @@ la fonction. -->
             <label>Description</label> : <input type="text" name="description" class="form-control"><br>
             <label>Prix</label> : <input type="number" name="price" class="form-control"><br>
             <label>Quantité en stock</label> : <input type="number" name="stock_qt" class="form-control"><br>
-            <label>Categorie</label> : <input type="text" name="cat_id" class="form-control" required><br>
             <label>Image du produit</label> : <input type="file" name="image" class="form-control-file"><br>
+            <label>Catégorie du produit</label> : <input type="text" name="categorie" class="form-control-file" required><br>
             <input type="submit" value="Enregistrer" name="submit" class="btn btn-primary">    </form>
 </div>
 <br>
