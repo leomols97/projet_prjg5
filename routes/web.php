@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductCtrl;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'AppCtrl@displayHomePage');
+Route::post('/connect', 'AppCtrl@connexion');
 Route::get('/administrateur', 'AdminCtrl@adminMainPage');
-Route::post('/administrateur/createStudent', 'AdminCtrl@addStudent');
+Route::get('/storePage', 'AppCtrl@storePage');
+Route::post('/storePage/buy', 'AppCtrl@resolveBuy');
+Route::post('/administrateur/createUser', 'MyUserCtrl@createUser');
+Route::post('/administrateur/createProduct', 'ProductCtrl@createProduct');
+Route::post('/administrateur/updateProduct', 'ProductCtrl@updateProduct');
+Route::post('/administrateur/deleteProduct', 'ProductCtrl@deleteProduct');
