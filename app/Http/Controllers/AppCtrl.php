@@ -20,7 +20,11 @@ class AppCtrl extends Controller
             $pass_word = htmlentities($_POST["pass_word"]);
             $user = \App\MyUser::findOrFail($user_id);
             if ($user->pass_word != $pass_word)
-                return "<script> alert('Mot de Passe Invalide!') </script>";
+                return view('errorPage',
+                [
+                    'errorMsg' => 'Mot de Passe Invalid! Vueillez contacter un administrateur!',
+                    'where' => '/'
+                ]);
             else if ($user->is_admin) {
                 $request->session()->put('is_admin', '1');
                 $request->session()->put('is_connected', '1');
